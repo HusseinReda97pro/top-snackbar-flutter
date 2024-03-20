@@ -26,6 +26,7 @@ class CustomSnackBar extends StatefulWidget {
     this.boxShadow = kDefaultBoxShadow,
     this.borderRadius = kDefaultBorderRadius,
     this.textScaleFactor = 1.0,
+    this.height,
     this.textAlign = TextAlign.center,
   }) : super(key: key);
 
@@ -33,6 +34,7 @@ class CustomSnackBar extends StatefulWidget {
     Key? key,
     required this.message,
     this.messagePadding = const EdgeInsets.symmetric(horizontal: 24),
+    this.height,
     this.icon = const Icon(
       Icons.sentiment_neutral,
       color: Color(0x15000000),
