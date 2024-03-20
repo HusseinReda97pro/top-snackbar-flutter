@@ -76,6 +76,7 @@ class CustomSnackBar extends StatefulWidget {
     this.boxShadow = kDefaultBoxShadow,
     this.borderRadius = kDefaultBorderRadius,
     this.textScaleFactor = 1.0,
+    this.height,
     this.textAlign = TextAlign.center,
   }) : super(key: key);
 
@@ -91,6 +92,7 @@ class CustomSnackBar extends StatefulWidget {
   final double iconPositionLeft;
   final EdgeInsetsGeometry messagePadding;
   final double textScaleFactor;
+  final double? height;
   final TextAlign textAlign;
 
   @override
@@ -103,7 +105,7 @@ class CustomSnackBarState extends State<CustomSnackBar> {
     final theme = Theme.of(context);
     return Container(
       clipBehavior: Clip.hardEdge,
-      height: 80,
+      height: widget.height ?? 80,
       decoration: BoxDecoration(
         color: widget.backgroundColor,
         borderRadius: widget.borderRadius,
@@ -116,7 +118,7 @@ class CustomSnackBarState extends State<CustomSnackBar> {
             top: widget.iconPositionTop,
             left: widget.iconPositionLeft,
             child: SizedBox(
-              height: 95,
+              height: widget.height ?? 95,
               child: Transform.rotate(
                 angle: widget.iconRotationAngle * pi / 180,
                 child: widget.icon,
